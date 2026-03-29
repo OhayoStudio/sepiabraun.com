@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sepia Braun — Coming Soon</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Lora:ital@0;1&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background-color: #F9F7F0;
+      color: #704214;
+      font-family: 'Lora', Georgia, serif;
+    }
+
+    .frame {
+      border: 1.5px solid #C4A882;
+      padding: 60px 80px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 32px;
+      max-width: 560px;
+      width: calc(100% - 48px);
+      position: relative;
+    }
+
+    .frame::before {
+      content: '';
+      position: absolute;
+      inset: 6px;
+      border: 0.5px solid #C4A882;
+      pointer-events: none;
+    }
+
+    .logo {
+      width: 100px;
+      height: 100px;
+    }
+
+    h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: clamp(52px, 10vw, 72px);
+      font-weight: 400;
+      line-height: 1;
+      color: #704214;
+    }
+
+    .divider {
+      width: 80px;
+      height: 1px;
+      background: #C4A882;
+    }
+
+    p {
+      font-size: 13px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #8B6340;
+    }
+
+    footer {
+      position: fixed;
+      bottom: 24px;
+      font-size: 12px;
+      color: #B0956C;
+      letter-spacing: 0.1em;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="frame">
+    <svg class="logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" aria-label="Sepia Braun">
+      <!-- squid logo inline -->
+      <image href="https://raw.githubusercontent.com/OhayoStudio/edo/main/app/assets/images/sepiabraun.svg" width="512" height="512"/>
+    </svg>
+
+    <h1>Sepia Braun</h1>
+
+    <div class="divider"></div>
+
+    <p>Something is brewing &mdash; coming soon</p>
+  </div>
+
+  <footer>sepiabraun.com</footer>
+
+</body>
+</html>
