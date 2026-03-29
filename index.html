@@ -243,10 +243,41 @@
     }
 
     .newsletter-label {
-      font-size: 0.82rem;
+      font-size: 0.88rem;
       color: var(--text-muted);
       font-style: italic;
-      margin-bottom: 0.8rem;
+      margin-bottom: 1.2rem;
+      line-height: 1.65;
+      max-width: 460px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      border: 0;
+    }
+
+    .powered-by {
+      margin-top: 0.6rem;
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      opacity: 0.6;
+    }
+
+    .powered-by a {
+      color: var(--text-muted);
+      text-decoration: none;
+    }
+
+    .powered-by a:hover {
+      text-decoration: underline;
     }
 
     .newsletter-form {
@@ -421,13 +452,21 @@
         </div>
       </div>
 
-      <!-- Newsletter signup -->
+      <!-- Newsletter signup — Buttondown -->
       <div class="newsletter">
-        <p class="newsletter-label">Know when we launch — no spam, no algorithm.</p>
-        <div class="newsletter-form">
-          <input type="email" class="newsletter-input" placeholder="your@email.com" aria-label="Email address">
-          <button class="newsletter-btn" onclick="handleSubscribe(this)">Notify me</button>
-        </div>
+        <p class="newsletter-label">One email when something new goes up. An article about a watch, a road in Kyushu, a coffee maker that earned its place on the counter — whatever passed the test that week. No schedule, no algorithm, no sponsored picks. Just the things worth paying attention to, from a site that would rather publish nothing than publish something that doesn't deserve your time.</p>
+        <form
+          action="https://buttondown.com/api/emails/embed-subscribe/sepiabraun"
+          method="post"
+          class="embeddable-buttondown-form newsletter-form"
+        >
+          <label for="bd-email" class="sr-only">Enter your email</label>
+          <input type="email" name="email" id="bd-email" class="newsletter-input" placeholder="your@email.com" required>
+          <input type="submit" value="Notify me" class="newsletter-btn">
+        </form>
+        <p class="powered-by">
+          <a href="https://buttondown.com/refer/sepiabraun" target="_blank">Powered by Buttondown.</a>
+        </p>
       </div>
 
       <div class="status">
@@ -443,25 +482,6 @@
     </p>
   </footer>
 
-  <script>
-    function handleSubscribe(btn) {
-      const input = btn.parentElement.querySelector('.newsletter-input');
-      const email = input.value.trim();
 
-      if (!email || !email.includes('@')) {
-        input.style.borderColor = '#c45';
-        input.focus();
-        setTimeout(() => { input.style.borderColor = ''; }, 2000);
-        return;
-      }
-
-      // Placeholder — wire this to your actual newsletter backend
-      btn.textContent = 'Noted ✓';
-      btn.style.background = 'var(--secondary)';
-      btn.disabled = true;
-      input.disabled = true;
-      input.value = email;
-    }
-  </script>
 </body>
 </html>
